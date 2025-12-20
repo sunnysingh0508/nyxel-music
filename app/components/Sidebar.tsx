@@ -1,0 +1,97 @@
+'use client';
+
+import Link from 'next/link';
+import { Home, Disc, Mic2, Compass, Clock, Heart, Upload, Library, Radio } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+
+export default function Sidebar() {
+  const pathname = usePathname();
+
+  const menuItems = [
+    { icon: Home, label: 'Home', href: '/' },
+    { icon: Disc, label: 'Albums', href: '/albums' },
+    { icon: Mic2, label: 'Artists', href: '/artists' },
+    { icon: Radio, label: 'Podcasts', href: '/podcasts' },
+    { icon: Compass, label: 'Discover', href: '/discover' },
+  ];
+
+  const libraryItems = [
+    { icon: Clock, label: 'Recently Played', href: '/recent' },
+    { icon: Heart, label: 'Favorites', href: '/favorites' },
+    { icon: Library, label: 'My Uploads', href: '/uploads' },
+  ];
+
+  return (
+    <aside className="fixed left-0 top-0 h-screen w-24 hover:w-72 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] bg-gradient-to-b from-[#1A1033] to-[#0B0F1A] border-r border-white/5 flex flex-col z-50 group overflow-hidden">
+      {/* Logo */}
+      <div className="p-8 pb-4 flex items-center gap-4 min-w-max">
+        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-violet-500/20 shrink-0">
+          <span className="font-bold text-white text-lg">N</span>
+        </div>
+        <span className="text-xl font-bold tracking-wider text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">NYXEL</span>
+      </div>
+
+      {/* Main Navigation */}
+      <nav className="flex-1 px-4 py-6 space-y-8 overflow-y-auto custom-scrollbar overflow-x-hidden">
+        <div className="space-y-2">
+          <p className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Menu</p>
+          {menuItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = pathname === item.href;
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 min-w-max
+                  ${isActive
+                    ? 'bg-gradient-to-r from-violet-600/20 to-indigo-600/20 text-white border-l-2 border-violet-500'
+                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                  }`}
+              >
+                <Icon className={`w-6 h-6 shrink-0 ${isActive ? 'text-violet-400' : 'group-hover/item:text-violet-400 transition-colors'}`} />
+                <span className="font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">{item.label}</span>
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="space-y-2">
+          <p className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Library</p>
+          {libraryItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-300 min-w-max group/item"
+              >
+                <Icon className="w-6 h-6 shrink-0 group-hover/item:text-pink-400 transition-colors" />
+                <span className="font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">{item.label}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+
+      {/* Bottom Section */}
+      <div className="p-4 mt-auto">
+        <div className="bg-gradient-to-br from-violet-900/50 to-indigo-900/50 rounded-2xl p-4 border border-white/5 backdrop-blur-md overflow-hidden min-w-max w-full">
+          <div className="flex flex-col gap-3">
+            <div className="flex justify-between items-center text-xs text-gray-400 mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span>Storage</span>
+              <span>2GB / 10GB</span>
+            </div>
+            <div className="h-1.5 bg-white/10 rounded-full overflow-hidden w-full">
+              <div className="h-full w-[20%] bg-gradient-to-r from-violet-500 to-pink-500 rounded-full"></div>
+            </div>
+            <button className="w-full mt-2 bg-white text-black font-semibold py-2.5 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors text-sm shadow-lg shadow-white/5 whitespace-nowrap">
+              <Upload className="w-4 h-4" />
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">Upload</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  );
+}
