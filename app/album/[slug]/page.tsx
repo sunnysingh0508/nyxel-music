@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import RightSidebar from "../../components/RightSidebar";
 import AlbumHero from "../../components/album-detail/AlbumHero";
 import AlbumTracklist from "../../components/album-detail/AlbumTracklist";
-import AlbumMetadata from "../../components/album-detail/AlbumMetadata";
+
 
 export default function AlbumDetailPage({ params }: { params: { slug: string } }) {
     // In a real app, use params.slug to fetch data.
@@ -34,9 +34,8 @@ export default function AlbumDetailPage({ params }: { params: { slug: string } }
 
                     <AlbumHero />
 
-                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-12">
+                    <div className="w-full">
                         <AlbumTracklist />
-                        <AlbumMetadata />
                     </div>
                 </div>
             </main>
