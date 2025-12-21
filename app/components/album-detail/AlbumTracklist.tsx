@@ -37,6 +37,15 @@ export default function AlbumTracklist() {
             artist: 'Mohammed Rafi',
             coverUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1000&auto=format&fit=crop'
         },
+        {
+            num: 4,
+            title: 'Tera Mera Pyar Amar',
+            duration: '3:55',
+            plays: '28K',
+            fileUrl: '/songs/_tera-mera-pyar-amar-asli-naqli-lata-mangeshkar-.mp3',
+            artist: 'Lata Mangeshkar',
+            coverUrl: 'https://images.unsplash.com/photo-1514525253440-b39345208668?q=80&w=1000&auto=format&fit=crop'
+        }
     ];
 
     const handleTrackClick = (trackData: any) => {
