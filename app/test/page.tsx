@@ -7,23 +7,42 @@ import { Play, Pause, Music } from "lucide-react";
 import { useState, useRef } from "react";
 
 export default function TestPage() {
+    const [currentSongIndex, setCurrentSongIndex] = useState<number | null>(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const audioRef = useRef<HTMLAudioElement>(null);
 
     const songs = [
         { title: "Radhey Song", file: "/songs/radheysong.mp3", artist: "Unknown Artist" },
+        { title: "Mere Mehboob Qayamat Hogi", file: "/songs/mere-mehboob-qayamat-hogi-kishore-kumars-greatest-hits-old-songs-.mp3", artist: "Kishore Kumar" },
+        { title: "Likhe Jo Khat Tujhe", file: "/songs/likhe-jo-khat-tujhe-song-mohammed-rafi-shashi-kapoor.mp3", artist: "Mohammed Rafi" },
     ];
 
-    const togglePlay = () => {
-        if (audioRef.current) {
+    const handlePlay = (index: number) => {
+        if (currentSongIndex === index) {
+            // Toggle play/pause for same song
             if (isPlaying) {
-                audioRef.current.pause();
+                audioRef.current?.pause();
             } else {
-                audioRef.current.play();
+                audioRef.current?.play();
             }
             setIsPlaying(!isPlaying);
+        } else {
+            // Change song
+            if (audioRef.current) {
+                audioRef.current.pause(); // Pause old
+                setCurrentSongIndex(index);
+                setIsPlaying(true);
+                // Need to wait for render to update source, or force it.
+                // Better approach: generic audio element uses currentSongIndex
+            } else {
+                setCurrentSongIndex(index);
+                setIsPlaying(true);
+            }
         }
     };
+
+    // Effect to play when song changes
+    // Simplified inline logic for this Test Page
 
     return (
         <div className="flex min-h-screen bg-[#0B0F1A] text-white font-sans selection:bg-violet-500/30 selection:text-white">
@@ -38,31 +57,40 @@ export default function TestPage() {
                         Audio Test Lab
                     </h1>
 
+                    {/* Hidden Global Audio Player */}
+                    <audio
+                        ref={audioRef}
+                        src={currentSongIndex !== null ? songs[currentSongIndex].file : undefined}
+                        onEnded={() => setIsPlaying(false)}
+                        onPlay={() => setIsPlaying(true)}
+                        onPause={() => setIsPlaying(false)}
+                        autoPlay
+                    />
+
                     <div className="grid gap-6">
                         {songs.map((song, index) => (
-                            <div key={index} className="bg-white/5 border border-white/5 rounded-2xl p-6 flex items-center justify-between hover:bg-white/10 transition-all group">
+                            <div key={index} className={`bg-white/5 border rounded-2xl p-6 flex items-center justify-between hover:bg-white/10 transition-all group ${currentSongIndex === index ? 'border-violet-500/50 bg-white/10' : 'border-white/5'}`}>
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-violet-500/20 group-hover:scale-110 transition-transform">
                                         <Music className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-lg">{song.title}</h3>
+                                        <h3 className={`font-bold text-lg ${currentSongIndex === index ? 'text-violet-400' : 'text-white'}`}>{song.title}</h3>
                                         <p className="text-gray-400 text-sm">{song.artist}</p>
                                     </div>
                                 </div>
 
                                 <div className="flex items-center gap-4">
                                     <button
-                                        onClick={togglePlay}
-                                        className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-white/20"
+                                        onClick={() => handlePlay(index)}
+                                        className={`w-12 h-12 rounded-full flex items-center justify-center hover:scale-105 transition-transform shadow-lg ${currentSongIndex === index && isPlaying ? 'bg-violet-500 text-white' : 'bg-white text-black'}`}
                                     >
-                                        {isPlaying ? (
+                                        {currentSongIndex === index && isPlaying ? (
                                             <Pause className="w-5 h-5 fill-current" />
                                         ) : (
                                             <Play className="w-5 h-5 fill-current ml-1" />
                                         )}
                                     </button>
-                                    <audio ref={audioRef} src={song.file} onEnded={() => setIsPlaying(false)} />
                                 </div>
                             </div>
                         ))}

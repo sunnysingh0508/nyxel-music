@@ -75,24 +75,7 @@ export default function Sidebar() {
         </div>
       </nav>
 
-      {/* Bottom Section */}
-      <div className="p-4 mt-auto">
-        <div className="bg-gradient-to-br from-violet-900/50 to-indigo-900/50 rounded-2xl p-4 border border-white/5 backdrop-blur-md overflow-hidden min-w-max w-full">
-          <div className="flex flex-col gap-3">
-            <div className="flex justify-between items-center text-xs text-gray-400 mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span>Storage</span>
-              <span>2GB / 10GB</span>
-            </div>
-            <div className="h-1.5 bg-white/10 rounded-full overflow-hidden w-full">
-              <div className="h-full w-[20%] bg-gradient-to-r from-violet-500 to-pink-500 rounded-full"></div>
-            </div>
-            <button className="w-full mt-2 bg-white text-black font-semibold py-2.5 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors text-sm shadow-lg shadow-white/5 whitespace-nowrap">
-              <Upload className="w-4 h-4" />
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">Upload</span>
-            </button>
-          </div>
-        </div>
-      </div>
+
     </aside>
   );
 }
