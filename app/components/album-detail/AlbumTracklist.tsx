@@ -45,6 +45,78 @@ export default function AlbumTracklist() {
             fileUrl: '/songs/_tera-mera-pyar-amar-asli-naqli-lata-mangeshkar-.mp3',
             artist: 'Lata Mangeshkar',
             coverUrl: 'https://images.unsplash.com/photo-1514525253440-b39345208668?q=80&w=1000&auto=format&fit=crop'
+        },
+        {
+            num: 5,
+            title: 'Itna Na Mujhse Tu Pyaar Badha',
+            duration: '3:40',
+            plays: '42K',
+            fileUrl: '/songs/itna-na-mujhse-tu-pyaar-badha-lata-mangeshkar-sunil.mp3',
+            artist: 'Lata Mangeshkar & Sunil',
+            coverUrl: 'https://images.unsplash.com/photo-1459749411177-d4a414c9586d?q=80&w=1000&auto=format&fit=crop'
+        },
+        {
+            num: 6,
+            title: 'Kisi Ki Muskurahaton Pe',
+            duration: '4:00',
+            plays: '25K',
+            fileUrl: '/songs/kisi-ki-muskurahaton-pe-ho-nisar-raj-kapoor-anari-mukesh.mp3',
+            artist: 'Mukesh',
+            coverUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop'
+        },
+        {
+            num: 7,
+            title: 'Aaj Phir Jeene Ki Tamanna Hai',
+            duration: '4:30',
+            plays: '30K',
+            fileUrl: '/songs/Aaj Phir Jeene Ki Tamanna Hai_spotdown.org.mp3',
+            artist: 'Lata Mangeshkar',
+            coverUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop'
+        },
+        {
+            num: 8,
+            title: 'Mere Samnewali Khidki Mein',
+            duration: '3:15',
+            plays: '55K',
+            fileUrl: '/songs/Mere Samnewali Khidki Mein_spotdown.org.mp3',
+            artist: 'Kishore Kumar',
+            coverUrl: 'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?q=80&w=1000&auto=format&fit=crop'
+        },
+        {
+            num: 9,
+            title: 'Mere Sapnon Ki Rani',
+            duration: '4:50',
+            plays: '60K',
+            fileUrl: '/songs/Mere Sapnon Ki Rani (From _Aradhana_)_spotdown.org.mp3',
+            artist: 'Kishore Kumar',
+            coverUrl: 'https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?q=80&w=1000&auto=format&fit=crop'
+        },
+        {
+            num: 10,
+            title: 'Neele Neele Ambar Par',
+            duration: '5:10',
+            plays: '40K',
+            fileUrl: '/songs/Neele Neele Ambar Par - Male Version_spotdown.org.mp3',
+            artist: 'Kishore Kumar',
+            coverUrl: 'https://images.unsplash.com/photo-1507838153414-b4b713384ebd?q=80&w=1000&auto=format&fit=crop'
+        },
+        {
+            num: 11,
+            title: 'Pyar Hua Iqrar Hua',
+            duration: '4:10',
+            plays: '33K',
+            fileUrl: '/songs/Pyar Hua Iqrar Hua_spotdown.org.mp3',
+            artist: 'Manna Dey & Lata Mangeshkar',
+            coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
+        },
+        {
+            num: 12,
+            title: 'Yeh Dosti Hum Nahin',
+            duration: '5:30',
+            plays: '70K',
+            fileUrl: '/songs/Yeh Dosti Hum Nahin - From _Sholay__spotdown.org.mp3',
+            artist: 'Kishore Kumar & Manna Dey',
+            coverUrl: 'https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?q=80&w=1000&auto=format&fit=crop'
         }
     ];
 
