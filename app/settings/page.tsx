@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 
-export default function SettingsPage() {
+function SettingsContent() {
     const searchParams = useSearchParams();
     const initialSection = searchParams.get('section') || 'profile';
     const [activeSection, setActiveSection] = useState(initialSection);
@@ -85,6 +85,14 @@ export default function SettingsPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function SettingsPage() {
+    return (
+        <React.Suspense fallback={<div className="min-h-screen bg-[#0A0A0A] text-white p-8">Loading...</div>}>
+            <SettingsContent />
+        </React.Suspense>
     );
 }
 
