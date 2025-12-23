@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function FeaturedAlbums() {
     const featured = [
-        { id: 1, title: 'Old Song', artist: 'The Weeknd', year: '2020', gradient: 'from-red-600 to-orange-600' },
+        { id: 1, title: 'Old Song', artist: 'The Weeknd', year: '2020', gradient: 'from-red-600 to-orange-600', image: '/images/old-song-cover.png' },
         { id: 2, title: 'Future Nostalgia', artist: 'Dua Lipa', year: '2020', gradient: 'from-pink-600 to-purple-600' },
         { id: 3, title: 'Dawn FM', artist: 'The Weeknd', year: '2022', gradient: 'from-blue-600 to-cyan-600' },
     ];
@@ -18,13 +18,22 @@ export default function FeaturedAlbums() {
             </div>
 
             <div className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide snap-x">
-                {featured.map((album) => (
+                {featured.map((album: any) => (
                     <Link href={`/album/${album.title.toLowerCase().replace(/\s+/g, '-')}`} key={album.id} className="min-w-[300px] md:min-w-[400px] aspect-square relative rounded-[24px] overflow-hidden group cursor-pointer snap-start shrink-0 shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:shadow-red-900/20">
                         {/* Background */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${album.gradient} opacity-80 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                        {album.image ? (
+                            <img
+                                src={album.image}
+                                alt={album.title}
+                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                        ) : (
+                            <div className={`absolute inset-0 bg-gradient-to-br ${album.gradient} opacity-80 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                        )}
+
                         {/* Specific Dark Fade for Old Song */}
                         {album.title === 'Old Song' && (
-                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/90"></div>
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/90 opacity-90"></div>
                         )}
                         {/* General Grain Overlay */}
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { Search, Bell, Settings, User } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Header() {
     return (
@@ -21,14 +22,18 @@ export default function Header() {
 
             {/* Right Section */}
             <div className="flex items-center gap-6 ml-6">
-                <button className="relative p-2 text-gray-400 hover:text-white transition-colors rounded-full hover:bg-white/5">
-                    <Bell className="w-5 h-5" />
-                    <span className="absolute top-1.5 right-2 block h-2 w-2 rounded-full ring-2 ring-[#0B0F1A] bg-pink-500"></span>
-                </button>
+                <Link href="/notifications">
+                    <button className="relative p-2 text-gray-400 hover:text-white transition-colors rounded-full hover:bg-white/5">
+                        <Bell className="w-5 h-5" />
+                        <span className="absolute top-1.5 right-2 block h-2 w-2 rounded-full ring-2 ring-[#0B0F1A] bg-pink-500"></span>
+                    </button>
+                </Link>
 
-                <button className="p-2 text-gray-400 hover:text-white transition-colors rounded-full hover:bg-white/5">
-                    <Settings className="w-5 h-5" />
-                </button>
+                <Link href="/settings">
+                    <button className="p-2 text-gray-400 hover:text-white transition-colors rounded-full hover:bg-white/5">
+                        <Settings className="w-5 h-5" />
+                    </button>
+                </Link>
 
                 <div className="flex items-center gap-3 pl-3 border-l border-white/10">
                     <div className="text-right hidden md:block">

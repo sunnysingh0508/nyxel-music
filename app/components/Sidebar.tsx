@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Home, Disc, Mic2, Compass, Clock, Heart, Upload, Library, Radio, FlaskConical } from 'lucide-react';
+import { Home, Disc, Mic2, Compass, Clock, Heart, Upload, Library, Radio, FlaskConical, Settings, Bell } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
 export default function Sidebar() {
@@ -11,8 +11,10 @@ export default function Sidebar() {
     { icon: Home, label: 'Home', href: '/' },
     { icon: Disc, label: 'Albums', href: '/albums' },
     { icon: Mic2, label: 'Artists', href: '/artists' },
+    { icon: Bell, label: 'Notifications', href: '/notifications' },
     { icon: Radio, label: 'Podcasts', href: '/podcasts' },
     { icon: Compass, label: 'Discover', href: '/discover' },
+    { icon: Settings, label: 'Settings', href: '/settings' },
     { icon: FlaskConical, label: 'Test', href: '/test' },
   ];
 
