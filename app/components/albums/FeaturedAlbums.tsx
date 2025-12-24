@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function FeaturedAlbums() {
     const featured = [
         { id: 1, title: 'Old Song', artist: 'The Weeknd', year: '2020', gradient: 'from-red-600 to-orange-600', image: '/images/old-song-cover.png' },
-        { id: 2, title: 'Future Nostalgia', artist: 'Dua Lipa', year: '2020', gradient: 'from-pink-600 to-purple-600' },
+        { id: 2, title: 'Punjabi Songs', artist: 'Dua Lipa', year: '2020', gradient: 'from-pink-600 to-purple-600', image: '/images/punjabi-songs.png' },
         { id: 3, title: 'Dawn FM', artist: 'The Weeknd', year: '2022', gradient: 'from-blue-600 to-cyan-600' },
     ];
 
