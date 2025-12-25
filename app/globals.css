@@ -3,9 +3,12 @@
 :root {
   --background: #0B0F1A;
   --foreground: #ffffff;
-  --primary: #8b5cf6; /* Neon purple */
-  --secondary: #0ea5e9; /* Electric blue */
-  --accent: #f472b6; /* Soft pink */
+  --primary: #8b5cf6;
+  /* Neon purple */
+  --secondary: #0ea5e9;
+  /* Electric blue */
+  --accent: #f472b6;
+  /* Soft pink */
   --surface: #1A1033;
   --glass: rgba(255, 255, 255, 0.05);
 }
@@ -57,8 +60,18 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #fff, #a78bfa);
-  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Custom Scrollbar - Invisible */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
