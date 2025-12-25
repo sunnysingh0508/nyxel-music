@@ -19,7 +19,7 @@ export default function FeaturedAlbums() {
 
             <div className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide snap-x">
                 {featured.map((album: any) => (
-                    <Link href={`/album/${album.title.toLowerCase().replace(/\s+/g, '-')}`} key={album.id} className="min-w-[300px] md:min-w-[400px] aspect-square relative rounded-[24px] overflow-hidden group cursor-pointer snap-start shrink-0 shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:shadow-red-900/20">
+                    <Link href={`/albums/${album.title.toLowerCase().replace(/\s+/g, '-')}`} key={album.id} className="min-w-[300px] md:min-w-[400px] aspect-square relative rounded-[24px] overflow-hidden group cursor-pointer snap-start shrink-0 shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:shadow-red-900/20">
                         {/* Background */}
                         {album.image ? (
                             <img

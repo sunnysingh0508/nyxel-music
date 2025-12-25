@@ -108,3 +108,24 @@ export const oldSongTracks = [
         coverUrl: 'https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?q=80&w=1000&auto=format&fit=crop'
     }
 ];
+
+export const punjabiTracks = [
+    {
+        num: 1,
+        title: 'Haseen',
+        duration: '3:45',
+        plays: '500M',
+        fileUrl: '/songs/Haseen_spotdown.org.mp3',
+        artist: 'Unknown Artist',
+        coverUrl: 'https://images.unsplash.com/photo-1621360841013-c768371e93cf?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 2,
+        title: 'Pal Pal',
+        duration: '3:20',
+        plays: '300M',
+        fileUrl: '/songs/Pal Pal (with Talwiinder)_spotdown.org.mp3',
+        artist: 'Talwiinder',
+        coverUrl: 'https://images.unsplash.com/photo-1621360841013-c768371e93cf?q=80&w=1000&auto=format&fit=crop'
+    }
+];

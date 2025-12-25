@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Home, Disc, Mic2, Compass, Clock, Heart, Upload, Library, Radio, FlaskConical, Settings, Bell } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import UserMiniProfile from './UserMiniProfile';
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -77,7 +78,7 @@ export default function Sidebar() {
         </div>
       </nav>
 
-
+      <UserMiniProfile />
     </aside>
   );
 }

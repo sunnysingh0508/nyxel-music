@@ -2,6 +2,7 @@ import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import RightSidebar from "./components/RightSidebar";
 import FeaturedSection from "./components/FeaturedSection";
+import FeaturedPlaylistCard from "./components/FeaturedPlaylistCard";
 import ExploreSection from "./components/ExploreSection";
 import CreatorsList from "./components/CreatorsList";
 import ActivityFeed from "./components/ActivityFeed";
@@ -16,7 +17,12 @@ export default function Home() {
 
         <div className="px-2 mt-4 space-y-12 pb-20">
           {/* Hero Section */}
-          <FeaturedSection />
+          <div className="flex flex-col xl:flex-row gap-6">
+            <FeaturedSection />
+            <div className="shrink-0 w-full xl:w-auto flex justify-center xl:block">
+              <FeaturedPlaylistCard />
+            </div>
+          </div>
 
           {/* Split Section: Explore & Stats/Feed */}
           <div className="flex flex-col 2xl:flex-row gap-8">

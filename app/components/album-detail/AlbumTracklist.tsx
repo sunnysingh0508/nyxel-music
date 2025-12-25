@@ -5,9 +5,14 @@ import React from 'react';
 import { usePlayer, Track } from '../../context/PlayerContext';
 import { oldSongTracks } from '../../data/tracks';
 
-export default function AlbumTracklist() {
+export default function AlbumTracklist({ tracks = oldSongTracks }: { tracks?: any[] }) {
     const { currentTrack, isPlaying, playTrack } = usePlayer();
-    const [localTracks, setLocalTracks] = React.useState(oldSongTracks.map(t => ({ ...t, liked: false })));
+    const [localTracks, setLocalTracks] = React.useState(tracks.map(t => ({ ...t, liked: false })));
+
+    // Update local tracks when props change
+    React.useEffect(() => {
+        setLocalTracks(tracks.map(t => ({ ...t, liked: false })));
+    }, [tracks]);
 
     const handleTrackClick = (trackData: any) => {
         // Increment play count locally
