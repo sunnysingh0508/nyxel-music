@@ -6,7 +6,7 @@ import RightSidebar from "../../components/RightSidebar";
 import AlbumHero from "../../components/album-detail/AlbumHero";
 import AlbumTracklist from "../../components/album-detail/AlbumTracklist";
 
-import { oldSongTracks, punjabiTracks } from "../../data/tracks";
+import { oldSongTracks, punjabiTracks, romanticTracks } from "../../data/tracks";
 
 import { use } from 'react';
 
@@ -15,6 +15,7 @@ export default function AlbumDetailPage({ params }: { params: Promise<{ slug: st
 
     // Determine which album data to show based on slug
     const isPunjabi = slug.includes('punjabi');
+    const isRomantic = slug.includes('romantic');
 
     // Default to Old Song
     let albumData = {
@@ -35,6 +36,15 @@ export default function AlbumDetailPage({ params }: { params: Promise<{ slug: st
             tracks: punjabiTracks,
             accentColor: 'orange' // Matches the card aesthetic
         };
+    } else if (isRomantic) {
+        albumData = {
+            title: 'Romantic Songs',
+            artist: 'Various Artists',
+            year: '2024',
+            coverImage: '/images/romantic-songs.png',
+            tracks: romanticTracks,
+            accentColor: 'blue' // Matches the card aesthetic
+        };
     }
 
     return (
@@ -46,7 +56,7 @@ export default function AlbumDetailPage({ params }: { params: Promise<{ slug: st
 
                 {/* Cinematic Backdrop */}
                 <div className="absolute top-0 w-full h-[500px] pointer-events-none z-0">
-                    <div className={`absolute inset-0 bg-gradient-to-b ${isPunjabi ? 'from-orange-900/20' : 'from-red-900/20'} via-[#0B0F1A]/80 to-[#0B0F1A]`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-b ${isPunjabi ? 'from-orange-900/20' : isRomantic ? 'from-blue-900/20' : 'from-red-900/20'} via-[#0B0F1A]/80 to-[#0B0F1A]`}></div>
                     <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
                 </div>
 

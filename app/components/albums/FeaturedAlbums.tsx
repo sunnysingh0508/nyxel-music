@@ -7,7 +7,7 @@ export default function FeaturedAlbums() {
     const featured = [
         { id: 1, title: 'Old Song', artist: 'The Weeknd', year: '2020', gradient: 'from-red-600 to-orange-600', image: '/images/old-song-cover.png' },
         { id: 2, title: 'Punjabi Songs', artist: 'Dua Lipa', year: '2020', gradient: 'from-pink-600 to-purple-600', image: '/images/punjabi-songs.png' },
-        { id: 3, title: 'Dawn FM', artist: 'The Weeknd', year: '2022', gradient: 'from-blue-600 to-cyan-600' },
+        { id: 3, title: 'Romantic Songs', artist: 'Various Artists', year: '2024', gradient: 'from-blue-600 to-cyan-600', image: '/images/romantic-songs.png', imgClass: 'object-fill' },
     ];
 
     return (
@@ -25,7 +25,7 @@ export default function FeaturedAlbums() {
                             <img
                                 src={album.image}
                                 alt={album.title}
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                className={`absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-105 ${album.imgClass || 'object-cover'}`}
                             />
                         ) : (
                             <div className={`absolute inset-0 bg-gradient-to-br ${album.gradient} opacity-80 group-hover:opacity-100 transition-opacity duration-500`}></div>

@@ -127,5 +127,44 @@ export const punjabiTracks = [
         fileUrl: '/songs/Pal Pal (with Talwiinder)_spotdown.org.mp3',
         artist: 'Talwiinder',
         coverUrl: 'https://images.unsplash.com/photo-1621360841013-c768371e93cf?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 3,
+        title: 'Tere Jeha',
+        duration: '3:15',
+        plays: '200M',
+        fileUrl: '/songs/Tere Jeha_spotdown.org.mp3',
+        artist: 'Unknown Artist',
+        coverUrl: 'https://images.unsplash.com/photo-1621360841013-c768371e93cf?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 4,
+        title: 'Udaarian',
+        duration: '4:15',
+        plays: '400M',
+        fileUrl: '/songs/Udaarian_spotdown.org.mp3',
+        artist: 'Satinder Sartaaj',
+        coverUrl: 'https://images.unsplash.com/photo-1621360841013-c768371e93cf?q=80&w=1000&auto=format&fit=crop'
+    }
+];
+
+export const romanticTracks = [
+    {
+        num: 1,
+        title: 'Ishqa Ve',
+        duration: '3:35',
+        plays: '500M',
+        fileUrl: '/songs/Ishqa Ve_spotdown.org.mp3',
+        artist: 'Unknown Artist',
+        coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 2,
+        title: 'Jugraafiya',
+        duration: '4:34',
+        plays: '600M',
+        fileUrl: '/songs/Jugraafiya - From _Super 30__spotdown.org.mp3',
+        artist: 'Udit Narayan & Shreya Ghoshal',
+        coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
     }
 ];
