@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import RightSidebar from "../components/RightSidebar";
 import AlbumsHeader from "../components/albums/AlbumsHeader";
 import FeaturedAlbums from "../components/albums/FeaturedAlbums";
+import AlbumGrid from "../components/albums/AlbumGrid";
 
 export default function AlbumsPage() {
     return (
@@ -18,6 +19,7 @@ export default function AlbumsPage() {
                     {/* Albums Content */}
                     <AlbumsHeader />
                     <FeaturedAlbums />
+                    <AlbumGrid />
                 </div>
             </main>
 
