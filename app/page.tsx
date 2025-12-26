@@ -6,17 +6,16 @@ import FeaturedPlaylistCard from "./components/FeaturedPlaylistCard";
 import ExploreSection from "./components/ExploreSection";
 import CreatorsList from "./components/CreatorsList";
 import ActivityFeed from "./components/ActivityFeed";
-import MobileNav from "./components/MobileNav";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen bg-[#0B0F1A] text-white font-sans selection:bg-violet-500/30 selection:text-white">
       <Sidebar />
 
-      <main className="flex-1 ml-0 md:ml-24 xl:mr-80 p-4 md:p-6 min-h-screen overflow-x-hidden">
+      <main className="flex-1 ml-24 mr-0 xl:mr-80 p-6 min-h-screen overflow-x-hidden">
         <Header />
 
-        <div className="px-1 md:px-2 mt-4 space-y-8 md:space-y-12 pb-24 md:pb-20">
+        <div className="px-2 mt-4 space-y-12 pb-20">
           {/* Hero Section */}
           <div className="flex flex-col xl:flex-row gap-6">
             <FeaturedSection />
@@ -43,7 +42,6 @@ export default function Home() {
       </main>
 
       <RightSidebar />
-      <MobileNav />
     </div>
   );
 }
