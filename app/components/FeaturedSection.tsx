@@ -4,7 +4,7 @@ import { Play, UserPlus, CheckCircle2 } from 'lucide-react';
 
 export default function FeaturedSection() {
     return (
-        <div className="w-full aspect-[2.5/1] relative rounded-3xl overflow-hidden group">
+        <div className="w-full aspect-square md:aspect-[2.5/1] relative rounded-3xl overflow-hidden group">
             {/* Background Image / Gradient */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#1A1033] via-[#2A1B54] to-[#0B0F1A]">
                 {/* Abstract shapes or placeholder image would go here */}
@@ -16,19 +16,19 @@ export default function FeaturedSection() {
             {/* Content Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-transparent to-transparent opacity-90"></div>
 
-            <div className="absolute inset-0 p-10 flex flex-col justify-end items-start z-10">
-                <div className="flex items-center gap-2 mb-4">
-                    <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-xs font-medium text-white uppercase tracking-wider">Featured Artist</span>
-                    <div className="flex items-center gap-1 text-blue-400 text-xs font-semibold">
+            <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end items-start z-10">
+                <div className="flex items-center gap-2 mb-3 md:mb-4">
+                    <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-[10px] md:text-xs font-medium text-white uppercase tracking-wider">Featured Artist</span>
+                    <div className="flex items-center gap-1 text-blue-400 text-[10px] md:text-xs font-semibold">
                         <CheckCircle2 className="w-3 h-3 fill-current" />
                         <span>Verified</span>
                     </div>
                 </div>
 
-                <h1 className="text-5xl md:text-6xl font-black text-white mb-2 tracking-tight group-hover:scale-105 transition-transform origin-bottom-left duration-500">
+                <h1 className="text-3xl md:text-6xl font-black text-white mb-2 tracking-tight group-hover:scale-105 transition-transform origin-bottom-left duration-500">
                     THE WEEKND
                 </h1>
-                <p className="text-xl text-gray-300 mb-8 max-w-lg font-light">
+                <p className="text-sm md:text-xl text-gray-300 mb-6 md:mb-8 max-w-lg font-light">
                     Experience the new era of synthesized soul. Listen to the exclusive premiere of "After Life".
                 </p>
 

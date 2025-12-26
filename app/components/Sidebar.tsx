@@ -26,7 +26,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-24 hover:w-72 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] bg-gradient-to-b from-[#1A1033] to-[#0B0F1A] border-r border-white/5 flex flex-col z-50 group overflow-hidden">
+    <aside className="fixed left-0 top-0 h-screen w-24 hover:w-72 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] bg-gradient-to-b from-[#1A1033] to-[#0B0F1A] border-r border-white/5 hidden md:flex flex-col z-50 group overflow-hidden">
       {/* Logo */}
       <div className="p-8 pb-4 flex items-center gap-4 min-w-max">
         <img src="/images/nyxel-logo-circle.png" alt="Nyxel Logo" className="w-8 h-8 rounded-full shadow-lg shadow-violet-500/20 shrink-0 object-cover" />

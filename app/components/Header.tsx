@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Header() {
     return (
-        <header className="flex items-center justify-between px-8 py-5 w-full">
+        <header className="flex items-center justify-between px-4 md:px-8 py-5 w-full">
             {/* Search */}
             <div className="flex-1 max-w-xl">
                 <div className="relative group">
@@ -14,8 +14,8 @@ export default function Header() {
                     </div>
                     <input
                         type="text"
-                        className="block w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-full leading-5 text-gray-300 placeholder-gray-500 focus:outline-none focus:bg-white/10 focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 sm:text-sm transition-all duration-300 shadow-lg shadow-black/20"
-                        placeholder="Search for artists, songs, or podcasts..."
+                        className="block w-full pl-10 pr-4 py-2.5 md:pl-11 md:pr-4 md:py-3 bg-white/5 border border-white/10 rounded-full leading-5 text-gray-300 placeholder-gray-500 focus:outline-none focus:bg-white/10 focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 text-xs sm:text-sm transition-all duration-300 shadow-lg shadow-black/20"
+                        placeholder="Search..."
                     />
                 </div>
             </div>
