@@ -145,6 +145,33 @@ export const punjabiTracks = [
         fileUrl: '/songs/Udaarian_spotdown.org.mp3',
         artist: 'Satinder Sartaaj',
         coverUrl: 'https://images.unsplash.com/photo-1621360841013-c768371e93cf?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 5,
+        title: 'Tauba Tauba',
+        duration: '3:20',
+        plays: '0',
+        fileUrl: '/songs/Tauba Tauba (From _Bad Newz_)_spotdown.org.mp3',
+        artist: 'Karan Aujla',
+        coverUrl: 'https://images.unsplash.com/photo-1621360841013-c768371e93cf?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 6,
+        title: 'Fly Karke',
+        duration: '3:50',
+        plays: '0',
+        fileUrl: '/songs/Fly Karke_spotdown.org.mp3',
+        artist: 'Saba Azad',
+        coverUrl: 'https://images.unsplash.com/photo-1621360841013-c768371e93cf?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 7,
+        title: 'Shakira Jatti',
+        duration: '3:40',
+        plays: '0',
+        fileUrl: "/songs/Shakira Jatti's Hips Dont Lie - Nachdi Patola Banke_spotdown.org.mp3",
+        artist: 'Unknown Artist',
+        coverUrl: 'https://images.unsplash.com/photo-1621360841013-c768371e93cf?q=80&w=1000&auto=format&fit=crop'
     }
 ];
 

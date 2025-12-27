@@ -33,6 +33,8 @@ const albumsData: Album[] = [
         fileUrl: '/songs/Ye Tune Kya Kiya_spotdown.org.mp3',
         tracksList: [
             { title: 'Ye Tune Kya Kiya', duration: '5:15', fileUrl: '/songs/Ye Tune Kya Kiya_spotdown.org.mp3' },
+            { title: 'Jo Tum Mere Ho', duration: '4:12', fileUrl: '/songs/Jo Tum Mere Ho_spotdown.org.mp3' },
+            { title: 'Mann Mera', duration: '3:20', fileUrl: '/songs/Mann Mera - Original Version_spotdown.org.mp3' },
             { title: 'Lonely Night', duration: '3:45' },
             { title: 'Broken Heart', duration: '4:12' },
             { title: 'Memories Fade', duration: '3:30' },
@@ -51,10 +53,34 @@ export default function AlbumGrid() {
     const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null);
     const { playTrack, isPlaying, currentTrack, togglePlay } = usePlayer();
 
+    const isAlbumPlaying = (album: Album) => {
+        if (!isPlaying || !currentTrack) return false;
+
+        // Exact match with album main file
+        if (currentTrack.fileUrl === album.fileUrl) return true;
+
+        // Check if any track in the list is playing
+        if (album.tracksList) {
+            return album.tracksList.some(t => t.fileUrl === currentTrack.fileUrl);
+        }
+
+        return false;
+    };
+
     const handlePlay = (album: Album) => {
         if (album.fileUrl) {
-            // Check if this album's song is currently playing
-            if (currentTrack?.fileUrl === album.fileUrl) {
+            // Check if ANY track from this album is currently playing
+            const playingCurrentAlbum = isAlbumPlaying(album);
+
+            // If already playing (paused or active), we toggle play.
+            // But we need to distinguish between "playing this album" vs "playing another album".
+            // isAlbumPlaying checks if currentTrack belongs to album AND isPlaying is true.
+            // We want to toggle if it belongs to album.
+
+            const isCurrentTrackFromAlbum = (currentTrack?.fileUrl === album.fileUrl) ||
+                (album.tracksList && album.tracksList.some(t => t.fileUrl === currentTrack?.fileUrl));
+
+            if (isCurrentTrackFromAlbum) {
                 togglePlay();
             } else {
                 playTrack({
@@ -66,10 +92,6 @@ export default function AlbumGrid() {
                 });
             }
         }
-    };
-
-    const isAlbumPlaying = (album: Album) => {
-        return isPlaying && currentTrack?.fileUrl === album.fileUrl;
     };
 
     return (
