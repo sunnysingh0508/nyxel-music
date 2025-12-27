@@ -4,6 +4,7 @@ import { Play, Heart, Plus, X, Shuffle, Clock } from 'lucide-react';
 import { useState } from 'react';
 
 // Types (Mock)
+// Types (Mock)
 interface Album {
     id: number;
     title: string;
@@ -12,10 +13,11 @@ interface Album {
     tracks: number;
     duration: string;
     coverColor: string;
+    image?: string;
 }
 
 const albumsData: Album[] = [
-    { id: 1, title: 'Random Access Memories', artist: 'Daft Punk', year: '2013', tracks: 13, duration: '74 min', coverColor: 'bg-gradient-to-br from-gray-800 to-black' },
+    { id: 1, title: 'Sad Song', artist: 'Daft Punk', year: '2013', tracks: 13, duration: '74 min', coverColor: 'bg-gradient-to-br from-gray-800 to-black', image: '/images/sad-song-grid-cover-4.png' },
     { id: 2, title: 'Currents', artist: 'Tame Impala', year: '2015', tracks: 13, duration: '51 min', coverColor: 'bg-gradient-to-br from-purple-800 to-pink-900' },
     { id: 3, title: 'Melodrama', artist: 'Lorde', year: '2017', tracks: 11, duration: '41 min', coverColor: 'bg-gradient-to-br from-blue-900 to-indigo-900' },
     { id: 4, title: 'Blonde', artist: 'Frank Ocean', year: '2016', tracks: 17, duration: '60 min', coverColor: 'bg-gradient-to-br from-green-900 to-emerald-900' },
@@ -38,6 +40,9 @@ export default function AlbumGrid() {
                         className="group relative bg-white/5 p-4 rounded-2xl hover:bg-white/10 transition-colors cursor-pointer border border-white/5 hover:border-white/10 glass-card"
                     >
                         <div className={`aspect-square w-full rounded-xl ${album.coverColor} mb-4 relative overflow-hidden group-hover:shadow-lg transition-all`}>
+                            {album.image && (
+                                <img src={album.image} alt={album.title} className="absolute inset-0 w-full h-full object-cover" />
+                            )}
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-[2px]">
                                 <button className="w-12 h-12 rounded-full bg-violet-500 text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform hover:bg-violet-400">
                                     <Play className="w-5 h-5 fill-current ml-1" />
@@ -68,7 +73,10 @@ export default function AlbumGrid() {
                         </button>
 
                         <div className="flex flex-col md:flex-row">
-                            <div className={`p-8 md:w-2/5 flex flex-col justify-end relative min-h-[300px] ${selectedAlbum.coverColor}`}>
+                            <div className={`p-8 md:w-2/5 flex flex-col justify-end relative min-h-[300px] ${selectedAlbum.coverColor} overflow-hidden`}>
+                                {selectedAlbum.image && (
+                                    <img src={selectedAlbum.image} alt={selectedAlbum.title} className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" />
+                                )}
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A1033] to-transparent"></div>
                                 <div className="relative z-10">
                                     <h2 className="text-4xl font-bold text-white mb-2 leading-tight">{selectedAlbum.title}</h2>
