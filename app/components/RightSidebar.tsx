@@ -14,6 +14,13 @@ export default function RightSidebar() {
         coverUrl: ''
     };
 
+    // Custom cover for Haseena, Mere Mehboob, and Likhe Jo Khat Tujhe
+    const displayCover =
+        displayTrack.title === 'Haseena' ? '/images/haseena-cover.png' :
+            displayTrack.title === 'Mere Mehboob Qayamat Hogi' ? '/images/mere-mehboob-cover.png' :
+                displayTrack.title === 'Likhe Jo Khat Tujhe' ? '/images/likhe-jo-khat-cover.png' :
+                    displayTrack.coverUrl;
+
     // Format time (seconds -> mm:ss)
     const formatTime = (time: number) => {
         if (isNaN(time)) return "0:00";
@@ -45,8 +52,8 @@ export default function RightSidebar() {
 
                     {/* Cover Image or Icon */}
                     <div className={`w-48 h-48 rounded-full overflow-hidden shadow-2xl transition-all duration-700 ${isPlaying ? 'animate-spin-slow' : ''}`}>
-                        {displayTrack.coverUrl ? (
-                            <img src={displayTrack.coverUrl} alt={displayTrack.title} className="w-full h-full object-cover" />
+                        {displayCover ? (
+                            <img src={displayCover} alt={displayTrack.title} className="w-full h-full object-cover" />
                         ) : (
                             <div className="w-full h-full bg-[#1A1F33] flex items-center justify-center text-violet-500 shadow-inner">
                                 <Disc className="w-20 h-20" />
