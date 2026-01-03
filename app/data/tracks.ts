@@ -193,5 +193,50 @@ export const romanticTracks = [
         fileUrl: '/songs/Jugraafiya - From _Super 30__spotdown.org.mp3',
         artist: 'Udit Narayan & Shreya Ghoshal',
         coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 3,
+        title: 'Sajni',
+        duration: '2:50',
+        plays: '0',
+        fileUrl: '/songs/Sajni (From _Laapataa Ladies_)_spotdown.org.mp3',
+        artist: 'Arijit Singh',
+        coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 4,
+        title: 'Jeene Laga Hoon',
+        duration: '3:56',
+        plays: '0',
+        fileUrl: '/songs/Jeene Laga Hoon_spotdown.org.mp3',
+        artist: 'Atif Aslam',
+        coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 5,
+        title: 'Marham (Pehle Bhi Main)',
+        duration: '4:30',
+        plays: '0',
+        fileUrl: '/songs/Marham (Pehle Bhi Main) [From _ANIMAL_]_spotdown.org.mp3',
+        artist: 'Vishal Mishra',
+        coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 6,
+        title: 'O Rangrez',
+        duration: '6:25',
+        plays: '0',
+        fileUrl: '/songs/O Rangrez_spotdown.org.mp3',
+        artist: 'Javed Bashir & Shreya Ghoshal',
+        coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 7,
+        title: 'Titli',
+        duration: '5:50',
+        plays: '0',
+        fileUrl: '/songs/Titli_spotdown.org.mp3',
+        artist: 'Chinmayi & Gopi Sunder',
+        coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
     }
 ];
