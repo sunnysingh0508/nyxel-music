@@ -238,5 +238,23 @@ export const romanticTracks = [
         fileUrl: '/songs/Titli_spotdown.org.mp3',
         artist: 'Chinmayi & Gopi Sunder',
         coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 8,
+        title: 'Apna Bana Le',
+        duration: '4:20',
+        plays: '0',
+        fileUrl: '/songs/Apna Bana Le_spotdown.org.mp3',
+        artist: 'Arijit Singh',
+        coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+        num: 9,
+        title: 'Tum Ho Toh',
+        duration: '4:10',
+        plays: '0',
+        fileUrl: '/songs/Tum Ho Toh (From _Saiyaara_)_spotdown.org.mp3',
+        artist: 'Farhan Saeed',
+        coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1000&auto=format&fit=crop'
     }
 ];
