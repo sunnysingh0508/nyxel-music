@@ -170,46 +170,77 @@ const AccountSettings = () => (
     </div>
 );
 
-const ProfileSettings = () => (
-    <div className="space-y-6">
-        <Section title="Public Profile" description="This is how you appear to others on NYXEL.">
-            <div className="flex items-start gap-8 mb-8">
-                <div className="shrink-0 text-center">
-                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 p-[2px] mb-3 shadow-2xl shadow-indigo-900/20">
-                        <div className="w-full h-full rounded-full bg-[#111] flex items-center justify-center overflow-hidden">
-                            <span className="text-3xl font-bold text-white">NX</span>
-                            {/* <img src="..." className="w-full h-full object-cover" /> */}
+const ProfileSettings = () => {
+    const [image, setImage] = useState<string | null>(null);
+    const fileInputRef = React.useRef<HTMLInputElement>(null);
+
+    const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImage(reader.result as string);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
+    return (
+        <div className="space-y-6">
+            <Section title="Public Profile" description="This is how you appear to others on NYXEL.">
+                <div className="flex items-start gap-8 mb-8">
+                    <div className="shrink-0 text-center">
+                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 p-[2px] mb-3 shadow-2xl shadow-indigo-900/20">
+                            <div className="w-full h-full rounded-full bg-[#111] flex items-center justify-center overflow-hidden relative">
+                                {image ? (
+                                    <img src={image} alt="Profile" className="w-full h-full object-cover" />
+                                ) : (
+                                    <span className="text-3xl font-bold text-white">NX</span>
+                                )}
+                            </div>
+                        </div>
+                        <input
+                            type="file"
+                            ref={fileInputRef}
+                            onChange={handleImageUpload}
+                            className="hidden"
+                            accept="image/*"
+                        />
+                        <button
+                            onClick={() => fileInputRef.current?.click()}
+                            className="text-xs text-indigo-400 hover:text-indigo-300 font-medium"
+                        >
+                            Change Photo
+                        </button>
+                    </div>
+
+                    <div className="flex-1 space-y-6">
+                        <InputGroup label="Display Name" value="Sunny Singh" />
+                        <div>
+                            <label className="text-xs text-gray-500 uppercase tracking-wider block mb-2">Short Bio</label>
+                            <textarea
+                                className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500/50 focus:bg-indigo-500/5 min-h-[100px] resize-none transition-all"
+                                defaultValue="Music enthusiast & curator. Living for the vibes."
+                            />
                         </div>
                     </div>
-                    <button className="text-xs text-indigo-400 hover:text-indigo-300 font-medium">Change Photo</button>
                 </div>
 
-                <div className="flex-1 space-y-6">
-                    <InputGroup label="Display Name" value="Sunny Singh" />
-                    <div>
-                        <label className="text-xs text-gray-500 uppercase tracking-wider block mb-2">Short Bio</label>
-                        <textarea
-                            className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500/50 focus:bg-indigo-500/5 min-h-[100px] resize-none transition-all"
-                            defaultValue="Music enthusiast & curator. Living for the vibes."
-                        />
-                    </div>
+                <div className="border-t border-white/5 pt-6 space-y-4">
+                    <Toggle label="Artist Account Mode" enabled={false} />
+                    <p className="text-xs text-gray-500 pl-0">Enabling artist mode allows you to upload tracks and view analytics.</p>
                 </div>
-            </div>
+            </Section>
 
-            <div className="border-t border-white/5 pt-6 space-y-4">
-                <Toggle label="Artist Account Mode" enabled={false} />
-                <p className="text-xs text-gray-500 pl-0">Enabling artist mode allows you to upload tracks and view analytics.</p>
+            <div className="flex items-center justify-end gap-4 pt-4">
+                <button className="px-6 py-3 rounded-full border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors">
+                    Preview Profile
+                </button>
+                <button className="flex items-center gap-2 px-8 py-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-900/20 transition-all hover:scale-105 active:scale-95 font-bold text-sm">
+                    <Save className="w-4 h-4" />
+                    Save Changes
+                </button>
             </div>
-        </Section>
-
-        <div className="flex items-center justify-end gap-4 pt-4">
-            <button className="px-6 py-3 rounded-full border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors">
-                Preview Profile
-            </button>
-            <button className="flex items-center gap-2 px-8 py-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-900/20 transition-all hover:scale-105 active:scale-95 font-bold text-sm">
-                <Save className="w-4 h-4" />
-                Save Changes
-            </button>
         </div>
-    </div>
-);
+    );
+};
