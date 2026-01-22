@@ -9,10 +9,11 @@ interface Artist {
     genre: string;
     followers: string;
     color: string;
+    image?: string;
 }
 
 const mainArtists: Artist[] = [
-    { id: 1, name: 'Drake', genre: 'Hip-Hop', followers: '78M', color: 'from-blue-600 to-indigo-700' },
+    { id: 1, name: 'Drake', genre: 'Hip-Hop', followers: '78M', color: 'from-blue-600 to-indigo-700', image: '/images/artist_drake.png' },
     { id: 2, name: 'Taylor Swift', genre: 'Pop', followers: '92M', color: 'from-rose-500 to-pink-600' },
     { id: 3, name: 'Travis Scott', genre: 'Hip-Hop', followers: '55M', color: 'from-amber-700 to-orange-800' },
     { id: 4, name: 'Billie Eilish', genre: 'Alt Pop', followers: '68M', color: 'from-lime-600 to-green-700' },
@@ -42,7 +43,15 @@ export default function ArtistsGrid() {
                         className="group flex flex-col items-center p-6 bg-white/5 rounded-3xl hover:bg-white/10 transition-all cursor-pointer border border-transparent hover:border-white/5"
                     >
                         <div className={`w-40 h-40 rounded-full bg-gradient-to-br ${artist.color} mb-6 relative group-hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all`}>
-                            <div className="absolute inset-0 bg-black/20 rounded-full group-hover:bg-transparent transition-colors"></div>
+                            {artist.image ? (
+                                <img
+                                    src={artist.image}
+                                    alt={artist.name}
+                                    className="absolute inset-0 w-full h-full object-cover rounded-full"
+                                />
+                            ) : (
+                                <div className="absolute inset-0 bg-black/20 rounded-full group-hover:bg-transparent transition-colors"></div>
+                            )}
 
                             <button className="absolute bottom-0 right-0 p-3 rounded-full bg-violet-600 text-white shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:scale-110 hover:bg-violet-500">
                                 <Play className="w-5 h-5 fill-current ml-0.5" />
