@@ -47,7 +47,7 @@ export default function ArtistsGrid() {
                                 <img
                                     src={artist.image}
                                     alt={artist.name}
-                                    className="absolute inset-0 w-full h-full object-cover rounded-full"
+                                    className="absolute inset-[3px] w-[calc(100%-6px)] h-[calc(100%-6px)] object-cover rounded-full shadow-inner"
                                 />
                             ) : (
                                 <div className="absolute inset-0 bg-black/20 rounded-full group-hover:bg-transparent transition-colors"></div>
