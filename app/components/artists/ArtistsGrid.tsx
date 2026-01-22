@@ -14,7 +14,7 @@ interface Artist {
 
 const mainArtists: Artist[] = [
     { id: 1, name: 'Drake', genre: 'Hip-Hop', followers: '78M', color: 'from-blue-600 to-indigo-700', image: '/images/artist_drake.png' },
-    { id: 2, name: 'Taylor Swift', genre: 'Pop', followers: '92M', color: 'from-rose-500 to-pink-600' },
+    { id: 2, name: 'A.R. Rahman', genre: 'Composer', followers: '92M', color: 'from-rose-500 to-pink-600', image: '/images/artist_ar_rahman.png' },
     { id: 3, name: 'Travis Scott', genre: 'Hip-Hop', followers: '55M', color: 'from-amber-700 to-orange-800' },
     { id: 4, name: 'Billie Eilish', genre: 'Alt Pop', followers: '68M', color: 'from-lime-600 to-green-700' },
     { id: 5, name: 'Post Malone', genre: 'Hip-Hop', followers: '42M', color: 'from-yellow-600 to-orange-600' },
